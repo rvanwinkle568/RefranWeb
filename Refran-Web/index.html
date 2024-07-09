@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="container">
+  <h1>Welcome to the sayings game</h1>
+  <p class="instructions">Try guessing the saying</p>
+
+  <div class="game-area">
+    <label id="lblSaying" class="sayings-label"></label>
+    <input type="text" id="txtUserAnswer" class="answer-input" placeholder="Enter your answer here">
+
+    <div class="buttons">
+      <button id="btnAnswer" class="btn">Answer</button>
+      <button id="btnNext" class="btn">Next</button>
+      <button id="btnRestart" class="btn">Restart</button>
+    </div>
+  </div>
+
+  <div class="message-area">
+    <p id="message"></p>
+  </div>
+</div>  
+</body>
+<script src="script.js"></script>
+</html>

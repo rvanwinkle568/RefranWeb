@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rba(0, 0, 0, 0.1);
+}
+
+h1{
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.instructions{
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.game-area{
+  margin-bottom: 20px;
+}
+
+.sayings-label{
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.answer-input{
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn{
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+message-area{
+  margin-top: 20px;
+}
+
+#message{
+  font-size: 1.2em;
+  color: #333;
+}
