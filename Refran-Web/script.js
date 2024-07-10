@@ -70,12 +70,20 @@ function DisplayRandomSaying()
   document.getElementById("lblSaying").textContent = currSayingFirstPart
 }
 
+//Function to remove accents and punctioation
+function grammarMemes(text)
+{
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                              .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+                              .toLowerCase()
+}
+
 //Function to check user's answer
 function checkAnswer()
 {
   let userAnswer = document.getElementById("txtUserAnswer").value.trim()
-  let normalizedUserAnswer = userAnswer.toLowerCase()
-  let normalizedCorrectAnswer = currSayingSecondPart.toLowerCase().trim()
+  let normalizedUserAnswer = grammarMemes(userAnswer)
+  let normalizedCorrectAnswer = grammarMemes(currSayingSecondPart.trim())
 
   console.log("User Answer:", normalizedUserAnswer, "Length:", normalizedUserAnswer.length);
   console.log("Correct Answer:", normalizedCorrectAnswer, "Length:", normalizedCorrectAnswer.length);
@@ -99,8 +107,20 @@ function nextSaying()
   document.getElementById("txtUserAnswer").value = "";                       document.getElementById("message").textContent = "";                   
 }
 
+//Function for reseting game
+function resetGame()
+{
+  seenSayings.clear()
+  correctSayings.clear()
+  document.getElementById("txtUserAnswer").value = ""
+  document.getElementById("message").textContent = ""
+
+  DisplayRandomSaying()
+}
+
 //Event listener for buttons
 document.getElementById("btnNext").addEventListener("click", nextSaying)
 document.getElementById("btnAnswer").addEventListener("click", checkAnswer)
+document.getElementById("btnRestart").addEventListener("click", resetGame)
 
 fetchSayings()
