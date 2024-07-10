@@ -40,6 +40,7 @@ h1{
   padding: 10px;
   font-size: 1em;
   margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 .buttons{
