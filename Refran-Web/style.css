@@ -5,6 +5,32 @@ body {
   margin: 0;
   padding: 0;
 }
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav ul li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li.active a{
+  background-color: #111;
+}
 
 .container{
   max-width: 600px;
@@ -23,6 +49,31 @@ h1{
 .instructions{
   font-size: 1.2em;
   margin-bottom: 20px;
+}
+
+.help-content{
+  text-align: left;
+}
+
+.help-content h2{
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: #333;
+}
+
+.help-content p{
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.help-content ul{
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+.help-content ul li{
+  margin-bottom: 10px;
 }
 
 .game-area{
