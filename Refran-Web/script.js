@@ -1,5 +1,5 @@
 let sayings = []
-let seenSayings = new Set()
+let fetchedSayings = []
 let correctSayings = new Set()
 let currSayingIndex = -1
 let currSayingFirstPart = ""
@@ -14,8 +14,23 @@ async function fetchSayings()
     if(response.ok)
     {
       const text = await response.text()
-      sayings = text.split("\n").filter(saying => saying.trim() !== "")
-      DisplayRandomSaying()
+      fetchedSayings = text.split("\n").filter(saying => saying.trim() !== "")
+
+      //Load game
+      loadGame(fetchedSayings)
+      
+      //Display current saying if it exist, otherwise display a new saying
+      if (currSayingIndex === -1)
+      {
+        DisplayRandomSaying()
+      }
+      else
+      {
+        displayCurrentSaying()
+      }
+
+      //Update remaining sayings
+      updateCounts()
     }
     else
     {
@@ -48,25 +63,23 @@ function DisplayRandomSaying()
     return
   }
 
-  if (seenSayings.size === sayings.length)
-  {
-    seenSayings.clear();
-  }
-
-  let newSayingIndex;
-  do
-  {
-    newSayingIndex = Math.floor(Math.random() * sayings.length)
+  let newSayingIndex = Math.floor(Math.random() * sayings.length)
     
-  } while(seenSayings.has(newSayingIndex) ||                                   correctSayings.has(newSayingIndex))
   
-  seenSayings.add(newSayingIndex)
   currSayingIndex = newSayingIndex
 
   let [firstPart, secondPart] = splitSaying(sayings[currSayingIndex])
   currSayingFirstPart = firstPart
   currSayingSecondPart = secondPart
   
+  document.getElementById("lblSaying").textContent = currSayingFirstPart
+
+  //Save game state
+  saveGame()
+}
+
+function displayCurrentSaying()
+{
   document.getElementById("lblSaying").textContent = currSayingFirstPart
 }
 
@@ -85,19 +98,24 @@ function checkAnswer()
   let normalizedUserAnswer = grammarMemes(userAnswer)
   let normalizedCorrectAnswer = grammarMemes(currSayingSecondPart.trim())
 
-  console.log("User Answer:", normalizedUserAnswer, "Length:", normalizedUserAnswer.length);
-  console.log("Correct Answer:", normalizedCorrectAnswer, "Length:", normalizedCorrectAnswer.length);
-
   if (normalizedCorrectAnswer === normalizedUserAnswer)
   {
     document.getElementById("message").textContent = "Correct!"
+    sayings.splice(currSayingIndex, 1)
     correctSayings.add(currSayingIndex)
+    
     nextSaying()
   }
   else
   {
     document.getElementById("message").textContent = `Incorrect, the correct answer is : '${currSayingSecondPart}'`
   }
+
+  //Update Scores
+  updateCounts()
+  
+  //Save game state
+  saveGame()
 }
 
 //Function to display the next saying
@@ -110,12 +128,52 @@ function nextSaying()
 //Function for reseting game
 function resetGame()
 {
-  seenSayings.clear()
   correctSayings.clear()
+  sayings = fetchedSayings
   document.getElementById("txtUserAnswer").value = ""
   document.getElementById("message").textContent = ""
 
   DisplayRandomSaying()
+
+  //Reset count
+  updateCounts()
+}
+
+function updateCounts()
+{
+  document.getElementById("correctCount").textContent = correctSayings.size
+  document.getElementById("remainingCount").textContent = sayings.length
+}
+
+function saveGame()
+{
+  const gameState = 
+  {
+    sayings: sayings,
+    correctSayings: Array.from(correctSayings),
+    currSayingIndex: currSayingIndex,
+    currSayingFirstPart: currSayingFirstPart,
+    currSayingSecondPart: currSayingSecondPart
+  }
+  localStorage.setItem("gameState", JSON.stringify(gameState))
+}
+
+function loadGame()
+{
+  const gameState = JSON.parse(localStorage.getItem("gameState"))
+
+  if (gameState)
+  {
+    sayings = gameState.sayings.length ? gameState.sayings : fetchedSayings;
+    correctSayings = new Set(gameState.correctSayings)
+    currSayingIndex = gameState.currSayingIndex
+    currSayingFirstPart = gameState.currSayingFirstPart
+    currSayingSecondPart = gameState.currSayingSecondPart
+  }
+  else
+  {
+    sayings = fetchedSayings
+  }
 }
 
 //Event listener for buttons
