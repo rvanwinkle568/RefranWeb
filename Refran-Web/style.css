@@ -51,31 +51,6 @@ h1{
   margin-bottom: 20px;
 }
 
-.help-content{
-  text-align: left;
-}
-
-.help-content h2{
-  font-size: 1.8em;
-  margin-top: 30px;
-  color: #333;
-}
-
-.help-content p{
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.help-content ul{
-  font-size: 1em;
-  margin-bottom: 20px;
-  padding-left: 40px;
-}
-
-.help-content ul li{
-  margin-bottom: 10px;
-}
-
 .game-area{
   margin-bottom: 20px;
 }
@@ -142,4 +117,48 @@ message-area{
 .score-item span{
   font-size: 24px;
   color: #000;
+}
+
+.help-content{
+  text-align: left;
+}
+
+.help-content h2{
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: #333;
+}
+
+.help-content p{
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.help-content ul{
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+.help-content ul li{
+  margin-bottom: 10px;
+}
+
+.search-area{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input{
+  width: 70%;
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.result-area{
+  margin-top: 20px;
+  text-align: left;
 }
