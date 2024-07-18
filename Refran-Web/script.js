@@ -10,7 +10,7 @@ async function fetchSayings()
 {
   try
   {
-    const response = await fetch("./resources/Refranes.txt")
+    const response = await fetch("../resources/Refranes.txt")
     if(response.ok)
     {
       const text = await response.text()
