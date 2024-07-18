@@ -113,3 +113,33 @@ message-area{
   font-size: 1.2em;
   color: #333;
 }
+
+.scoreboard{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.score-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin: 0 10px;
+}
+
+.score-item p{
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+.score-item span{
+  font-size: 24px;
+  color: #000;
+}
