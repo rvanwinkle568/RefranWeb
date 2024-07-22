@@ -1,3 +1,4 @@
+/*General*/
 body {
   font-family: Arial, sans serif;
   text-align: center;
@@ -32,6 +33,24 @@ nav ul li a:hover, nav ul li.active a{
   background-color: #111;
 }
 
+h1{
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn{
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/*Main game styling*/
 .container{
   max-width: 600px;
   margin: 50px auto;
@@ -41,10 +60,6 @@ nav ul li a:hover, nav ul li.active a{
   box-shadow: 0 0 10px rba(0, 0, 0, 0.1);
 }
 
-h1{
-  font-size: 2em;
-  margin-bottom: 20px;
-}
 
 .instructions{
   font-size: 1.2em;
@@ -67,17 +82,6 @@ h1{
   font-size: 1em;
   margin-bottom: 20px;
   box-sizing: border-box;
-}
-
-.buttons{
-  display: flex;
-  justify-content: space-around;
-}
-
-.btn{
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
 }
 
 message-area{
@@ -119,6 +123,7 @@ message-area{
   color: #000;
 }
 
+/*Help page styling*/
 .help-content{
   text-align: left;
 }
@@ -144,6 +149,7 @@ message-area{
   margin-bottom: 10px;
 }
 
+/*Answers page styling*/
 .search-area{
   display: flex;
   justify-content: center;
@@ -158,7 +164,15 @@ message-area{
   box-sizing: border-box;
 }
 
-.result-area{
+.results-area{
   margin-top: 20px;
   text-align: left;
+}
+
+.result-item{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.1em;
+  color: #333;
+  word-wrap: break-word;
 }
