@@ -181,4 +181,11 @@ document.getElementById("btnNext").addEventListener("click", nextSaying)
 document.getElementById("btnAnswer").addEventListener("click", checkAnswer)
 document.getElementById("btnRestart").addEventListener("click", resetGame)
 
+//Event listener for enter key press
+document.getElementById("txtUserAnswer").addEventListener("keypress", function(event){
+  if (event.key = "Enter"){
+    checkAnswer()
+  }
+})
+
 fetchSayings()
