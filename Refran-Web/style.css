@@ -176,3 +176,32 @@ message-area{
   color: #333;
   word-wrap: break-word;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .instructions {
+    font-size: 1em;
+  }
+
+  .sayings-label {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .score-item {
+    margin: 0 5px;
+  }
+}
