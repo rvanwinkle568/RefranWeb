@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Juego de Refranes</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="active"><a href="index.html">Juego</a></li>
+      <li><a href="help.html">Ayuda</a></li>
+      <li><a href="answers.html">Contestaciones</a></li>
+    </ul>
+  </nav>  
+  
+  <div class="container">
+    <h1>Bienvenida al juego de refranes</h1>
+    <p class="instructions">Intenta adivinar el refran.</p>
+  
+    <div class="game-area">
+      <label id="lblSaying" class="sayings-label"></label>
+      <input type="text" id="txtUserAnswer" class="answer-input" placeholder="Ingresa tu respuesta aquí">
+  
+      <div class="buttons">
+        <button id="btnAnswer" class="btn">Contestar</button>
+        <button id="btnNext" class="btn">Siguiente</button>
+        <button id="btnRestart" class="btn">Reanudar</button>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <div class="score-item">
+        <p>Respuestas correctas</p>
+        <span id="correctCount">0</span>
+      </div>
+
+      <div class="score-item">
+          <p>Refranes que quedan</p>
+          <span id="remainingCount">0</span>
+      </div>   
+    </div>
+  
+    <div class="message-area">
+      <p id="message"></p>
+    </div>
+  </div>  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="../js/script.js"></script>
+</html>

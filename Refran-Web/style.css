@@ -1,0 +1,207 @@
+/*General*/
+body {
+  font-family: Arial, sans serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li{
+  float: left;
+}
+
+nav ul li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li.active a{
+  background-color: #111;
+}
+
+h1{
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn{
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/*Main game styling*/
+.container{
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rba(0, 0, 0, 0.1);
+}
+
+
+.instructions{
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.game-area{
+  margin-bottom: 20px;
+}
+
+.sayings-label{
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.answer-input{
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+message-area{
+  margin-top: 20px;
+}
+
+#message{
+  font-size: 1.2em;
+  color: #333;
+}
+
+.scoreboard{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.score-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  margin: 0 10px;
+}
+
+.score-item p{
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+.score-item span{
+  font-size: 24px;
+  color: #000;
+}
+
+/*Help page styling*/
+.help-content{
+  text-align: left;
+}
+
+.help-content h2{
+  font-size: 1.8em;
+  margin-top: 30px;
+  color: #333;
+}
+
+.help-content p{
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.help-content ul{
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding-left: 40px;
+}
+
+.help-content ul li{
+  margin-bottom: 10px;
+}
+
+/*Answers page styling*/
+.search-area{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input{
+  width: 70%;
+  padding: 10px;
+  font-size: 1em;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.results-area{
+  margin-top: 20px;
+  text-align: left;
+}
+
+.result-item{
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.1em;
+  color: #333;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .instructions {
+    font-size: 1em;
+  }
+
+  .sayings-label {
+    font-size: 1.2em;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .score-item {
+    margin: 0 5px;
+  }
+}
